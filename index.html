@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+   	    <meta charset="UTF-8">
 		<title>Avengers</title>
-		<link href="style.css" type="text/css" rel="stylesheet">
-		<script type="text/javascript" src="app.js"></script>
+		<link href="styles.css" type="text/css" rel="stylesheet">
+		<script src="app.js"></script>
 		<?php include 'superheros.php';?>
 
 	</head>
     <body>
-        <h1>Avengers character search</h1><br>
-        
-        <form action="">
-        	Search Hero name or alias: <input type="text" name="txt1" onkeyup="loadOne(this.value)">
-        </form><br>
-	<button id="demo" type="button" onclick="loadDoc()">search</button>
-        <div id= result>
-        	<p>Results: </p><br> 
-        	<p id=results></p>
 
-		
+
+     <div id="container">
+     <div id= "head"><h1>Avengers character search</h1><br></div>
+       
+    Search Hero name or alias <input type="text" id="search_box">
+    <input type="button" id="search_button" value="Search"><br>
+    <h2>RESULTS</h2>
+
+    <div id="search_results" style="padding:5px;"></div>
+ 
+    
+
 
     </body>
 </html>

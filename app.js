@@ -1,27 +1,42 @@
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = alert(this.responseText);
-    }
-  };
-  xhttp.open("GET", "superheroes.php", true);
-  xhttp.send();
-}
+$('#search_button').click(function(){
+        //If the search_button was clicked,
+        //get the value from the search_box.
+        var search_term = $('#search_box').val().trim();
+        $.ajax({
+            url: 'superheroes.php',
+            data: {
+                q: search_term
+            },
+            success: function(returnData){
+                $('#search_results').html('');
+                var results = JSON.parse(returnData);
+  
+                $.each(results, function(key, value){
+                    $('#search_results').append(value + '<br>');
+                });
+
+                if(results.length == 0){
+                    $('#search_results').html(superheros.php);
+                }
+            }
+        });
+    });
 
 
-function loadOne(str){
-  var xhttp;
-  if (str.length == 0) { 
-    document.getElementById("result").innerHTML = superheroes.php;
+
+/*function loadOne(str) {
+  if (str.length==0) {
+    document.getElementById("search").innerHTML="";
     return;
   }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("result").innerHTML = this.responseText;
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("results").innerHTML=this.responseText;
     }
-  };
-  xhttp.open("GET", "superheroes.php?query="+str, true);
-  xhttp.send();   
+  }
+  xmlhttp.open("GET","superheroes.php?q="+str,true);
+  xmlhttp.send();
 }
+
+   

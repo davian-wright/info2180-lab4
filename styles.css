@@ -1,4 +1,20 @@
 body{
-	align-items: center;
-	
+	text-align: center;
+	background-color: #f2e6ff;
+	font-color: #000000;
+	font-size: 26px;
 }
+h1{
+  max-width: 100%;
+  background-color: #b366ff;
+  margin: auto;
+  font-size: 40px;
+
+}
+h2{
+	text-align: left;
+}
+button{
+	font-size:25px;
+}
+
