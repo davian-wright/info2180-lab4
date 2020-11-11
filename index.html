@@ -4,13 +4,21 @@
 		<title>Avengers</title>
 		<link href="style.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="app.js"></script>
-		<?php include 'superhero.php';?>
+		<?php include 'superheros.php';?>
 
 	</head>
     <body>
         <h1>Avengers character search</h1><br>
+        
+        <form action="">
+        	Search Hero name or alias: <input type="text" name="txt1" onkeyup="loadOne(this.value)">
+        </form><br>
+	<button id="demo" type="button" onclick="loadDoc()">search</button>
+        <div id= result>
+        	<p>Results: </p><br> 
+        	<p id=results></p>
 
-		<button id="demo" type="button" onclick="loadDoc()">search</button>
+		
 
     </body>
 </html>
